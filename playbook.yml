@@ -3,13 +3,13 @@
   any_errors_fatal: true
   tasks:
     - name: install git
-      become: 'yes'
+      Become: 'yes'
       package:
         name: git
         state: present
 
     - name: checkout ansible-hardening-debian
-      become: 'yes'
+      Become: 'yes'
       ansible.builtin.git:
         repo: 'https://github.com/notitiatech/ansible-hardening-debian.git'
         dest: /etc/ansible/roles/ansible-hardening-debian

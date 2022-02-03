@@ -4,7 +4,6 @@ Include /etc/ssh/sshd_config.d/*.conf
 {% endif %}
 
 AcceptEnv {{ sshd_accept_env }}
-#AllowGroups {{ sshd_allow_groups }} # optional
 AllowAgentForwarding {{ sshd_allow_agent_forwarding }}
 AllowTcpForwarding {{ sshd_allow_tcp_forwarding }}
 AuthenticationMethods {{ sshd_authentication_methods }}
@@ -41,5 +40,6 @@ UsePAM {{ sshd_use_pam }}
 X11Forwarding {{ sshd_x11_forwarding }}
 
 ### ToDo
+#AllowGroups {{ sshd_allow_groups }} # optional
 PasswordAuthentication yes
 PermitRootLogin yes

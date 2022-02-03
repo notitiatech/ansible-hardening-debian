@@ -58,22 +58,20 @@ None.
         name: git
         state: present
 
-    - name: checkout konstruktoid.hardening
+    - name: checkout ansible-hardening-debian
       become: 'yes'
       ansible.builtin.git:
-        repo: 'https://github.com/konstruktoid/ansible-role-hardening'
-        dest: /etc/ansible/roles/konstruktoid.hardening
+        repo: 'https://github.com/notitiatech/ansible-hardening-debian.git'
+        dest: /etc/ansible/roles/ansible-hardening-debian
         version: master
 
     - name: include the hardening role
       include_role:
-        name: konstruktoid.hardening
+        name: ansible-hardening-debian
       vars:
         block_blacklisted: true
         sshd_admin_net:
-          - 10.0.2.0/24
-          - 192.168.0.0/24
-          - 192.168.1.0/24
+          - 0.0.0.0/0
         suid_sgid_permissions: false
 ...
 ```

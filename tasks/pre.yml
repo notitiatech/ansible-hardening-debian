@@ -62,7 +62,7 @@
     - fact
 
 - name: update facts
-  ansible.builtin.setup: ~
+  ansible.builtin.setup:
   tags:
     - fact
 

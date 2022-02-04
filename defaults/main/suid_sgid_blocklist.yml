@@ -1,5 +1,5 @@
 ---
-suid_sgid_permissions: false
+suid_sgid_permissions: true
 suid_sgid_blocklist:
   - /bin/ansible-playbook
   - /bin/ar

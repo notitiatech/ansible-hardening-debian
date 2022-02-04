@@ -33,6 +33,7 @@
         block_blacklisted: true
         sshd_admin_net:
           - 0.0.0.0/0
+        sshd_banner: "empty"
         suid_sgid_permissions: false
         auditd_apply_audit_rules: 'no'
         dns: 9.9.9.11 149.112.112.11

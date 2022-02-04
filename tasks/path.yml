@@ -13,16 +13,16 @@
     - path
     - M1038
 
-- name: path script
-  become: 'yes'
-  ansible.builtin.template:
-    src: etc/profile.d/initpath.sh.j2
-    dest: /etc/profile.d/initpath.sh
-    backup: 'yes'
-    mode: 0644
-    owner: root
-    group: root
-  tags:
-    - path
-    - M1038
+# - name: path script
+#   become: 'yes'
+#   ansible.builtin.template:
+#     src: etc/profile.d/initpath.sh.j2
+#     dest: /etc/profile.d/initpath.sh
+#     backup: 'yes'
+#     mode: 0644
+#     owner: root
+#     group: root
+#   tags:
+#     - path
+#     - M1038
 ...

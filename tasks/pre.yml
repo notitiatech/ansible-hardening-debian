@@ -49,17 +49,18 @@
     - reboot
     - fact
 
-- name: ssh keys fact
-  become: 'yes'
-  ansible.builtin.template:
-    src: etc/ansible/facts.d/sshkeys.fact
-    dest: /etc/ansible/facts.d/sshkeys.fact
-    mode: 0755
-    owner: root
-    group: root
-  tags:
-    - sshd
-    - fact
+### broken
+# - name: ssh keys fact
+#   become: 'yes'
+#   ansible.builtin.template:
+#     src: etc/ansible/facts.d/sshkeys.fact
+#     dest: /etc/ansible/facts.d/sshkeys.fact
+#     mode: 0755
+#     owner: root
+#     group: root
+#   tags:
+#     - sshd
+#     - fact
 
 - name: update facts
   ansible.builtin.setup:

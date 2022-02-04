@@ -12,13 +12,12 @@
     - name: add ssh key
       authorized_key:
         user: sandro
-        key: >
-          ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC2HpGuQHsDqG5G1RcTNEc8pif7nLAS91JsVihCZb1N/Ggu1l/5HbA+4J
-          uhf6EMwE43c6OYfkl8gZgZ7aeAo2LksbmrwKFand9QvKYNQyKsGhue64nWTFwlJuoiRbsU/zwJ2d9QYQVwRDcSurHiEts2
-          rqg4Ea/13PjhkgagGOwKB+iHgZPuEfemzvu34O/7dUyQAbo4WYwdOzol0CRgw2ZaZz81DnlQ3ewQo0LWQjzhyAuhSwb3n8
-          UXCxeB71CesKEmJf5ORfK/eAR7mkKU89LwzIuDDvt8IPC74Mav6hHoy5mipRle2xA/7sbTlDSU+Mn9eCPVVob42SCQcsCM
-          m0yQYnJLMAaO9MsEBxTc/dpQCCIIrhXT9NjUPCZeHzK2S/fi9ej9Dojb6rXKdVFK7/ZjuuuREW7MgxWm5bh8lZhhdHoq+V
-          KNEiIq4blPn9vVjxItdur8fs/sbRnxCiQXZA0YKHOGcE7PkM4o4HHZBY9KNPDdeHhrUCd6GKX3Ho6qEjE= sandro@MBP-von-Sandro.fritz.box
+        key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC2HpGuQHsDqG5G1RcTNEc8pif7nLAS91JsVihCZb1N/Ggu1l/5HbA+4J\
+          uhf6EMwE43c6OYfkl8gZgZ7aeAo2LksbmrwKFand9QvKYNQyKsGhue64nWTFwlJuoiRbsU/zwJ2d9QYQVwRDcSurHiEts2\
+          rqg4Ea/13PjhkgagGOwKB+iHgZPuEfemzvu34O/7dUyQAbo4WYwdOzol0CRgw2ZaZz81DnlQ3ewQo0LWQjzhyAuhSwb3n8\
+          UXCxeB71CesKEmJf5ORfK/eAR7mkKU89LwzIuDDvt8IPC74Mav6hHoy5mipRle2xA/7sbTlDSU+Mn9eCPVVob42SCQcsCM\
+          m0yQYnJLMAaO9MsEBxTc/dpQCCIIrhXT9NjUPCZeHzK2S/fi9ej9Dojb6rXKdVFK7/ZjuuuREW7MgxWm5bh8lZhhdHoq+V\
+          KNEiIq4blPn9vVjxItdur8fs/sbRnxCiQXZA0YKHOGcE7PkM4o4HHZBY9KNPDdeHhrUCd6GKX3Ho6qEjE="
 
     - name: allow sudo without password
       lineinfile:
@@ -26,17 +25,6 @@
         state: "present"
         regexp: "^%sudo"
         line: "%sudo ALL=(ALL) NOPASSWD: ALL"
-
-    # - name: install git
-    #   package:
-    #     name: git
-    #     state: present
-
-    # - name: checkout ansible-hardening-debian
-    #   ansible.builtin.git:
-    #     repo: 'https://github.com/notitiatech/ansible-hardening-debian.git'
-    #     dest: /etc/ansible/roles/ansible-hardening-debian
-    #     version: master
 
     - name: include the hardening role
       include_role:

@@ -8,6 +8,7 @@
         name: sandro
         state: present
         group: "sudo"
+        shell: /bin/bash
 
     - name: add ssh key
       authorized_key:
